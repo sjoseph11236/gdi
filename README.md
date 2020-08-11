@@ -1,6 +1,9 @@
 # To Do List App: 
 
 _Building a To do list App that will be able to perform basic CRUD (Create, Read Update, and delete)_
+
+![gdi](./img/mock.png);
+
 # Install: 
   fork and clone
 # Resources: 
