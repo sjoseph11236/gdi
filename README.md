@@ -2,7 +2,9 @@
 
 _Building a To-do list App that will be able to perform basic CRUD operations (Create, Read Update, and delete)_
 
-![gdi](./img/mock.png);
+<p align="center">
+  <img src="./img/mock.png"  alt="gdi"/>
+</p>
 
 # Install: 
 ```
