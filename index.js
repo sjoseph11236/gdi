@@ -11,15 +11,20 @@ const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
 // Variable
-let LIST,id; 
+let LIST = [];
+let id = 0;
+
+// let LIST,id; 
 
 // // get item from localstorage
 // let data = localStorage.getItem("TODO");
-// console.log('data', data)
+
+
 // // Check if data is note empty
 // if(data) {
 //   LIST = JSON.parse(data);
 //   id = LIST.length;
+//   console.log(LIST)
 //   loadList(LIST);
 // }
 // else { 
@@ -27,10 +32,10 @@ let LIST,id;
 //   id = 0;
 // }
 
-// Load items to the user's interface
-const loadList = (array) => { 
-  array.forEach(item => addToDo(item.name, item.id, item.done, item.trash));
-}
+// // Load items to the user's interface
+// function loadList(array) { 
+//   array.forEach(item => addToDo(item.name, item.id, item.done, item.trash));
+// }
 
 // Show todays date
 const options = { weekday: "long", month: "short", day: "numeric"};
@@ -39,7 +44,7 @@ const today = new Date();
 dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 
 // Add to do function
-const addToDo = (toDo, id, done, trash) => { 
+function addToDo (toDo, id, done, trash) { 
   if(trash) return; 
 
   const DONE = done ? CHECK : UNCHECK; 
@@ -51,7 +56,7 @@ const addToDo = (toDo, id, done, trash) => {
                   <i class="fa fa-trash-o de" job="delete" id="${id}"></i> 
                 </li>
                 `;
-  const position = "beforeend"
+  const position = "beforeend";
   // What is the difference between insertAdjacentElement
   list.insertAdjacentHTML(position, item);
 }
@@ -86,16 +91,13 @@ const completeToDo = (element) => {
   LIST[element.id].done = LIST[element.id].done ? false : true;
 }
 
-
 // remove to do
 const removeToDo = (element) => { 
   element.parentNode.parentNode.removeChild(element.parentNode);
-
   LIST[element.id].trash = true;
 }
 
 // target the items created dynamically
-
 list.addEventListener("click", evt => {
   const element = evt.target; 
   const elementJob = element.attributes.job.value; 
@@ -107,6 +109,22 @@ list.addEventListener("click", evt => {
     removeToDo(element);
   }
 
-  // add item to localstorage (This has to appear ever where we add an item to the array).
+  // // add item to localstorage (This has to appear ever where we add an item to the array).
   // localStorage.setItem("TODO", JSON.stringify(LIST));
+})
+
+// refresh the todolist
+clear.addEventListener("click", evt => { 
+
+  /* START HERE */
+  // check if the parent node has firstChild.
+  while(list.firstChild) {
+    // remove ever firstChild
+    list.removeChild(list.firstChild)
+  }
+  // Clear the LIST. 
+  LIST =[];
+
+  // localStorage.clear();
+  // location.reload();
 })
