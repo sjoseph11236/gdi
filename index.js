@@ -38,6 +38,7 @@ let id = 0;
 // }
 
 // Show todays date
+// long is the string should spell out the full word "Monday" instead "mon".
 const options = { weekday: "long", month: "short", day: "numeric"};
 const today = new Date();
 
