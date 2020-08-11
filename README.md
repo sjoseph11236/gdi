@@ -19,3 +19,4 @@ _Building a To-do list App that will be able to perform basic CRUD operations (C
 - [Understanding Arrow functions](https://janhesters.com/understanding-arrow-functions/)
 - [Breaking the Loop..](https://medium.com/@RhinoDavid/processing-javascript-arrays-with-foreach-map-reduce-bf40d1e5eac4)
 - [Callback Function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
+- [Insert Adjacent html](https://flaviocopes.com/insertadjacenthtml/)
