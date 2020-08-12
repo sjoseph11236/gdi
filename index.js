@@ -5,7 +5,6 @@ const list = document.getElementById("list");
 const input = document.getElementById("input");
 
 // Classes names
-// Why this const uppercase and not the others?
 const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
@@ -58,7 +57,6 @@ function addToDo (toDo, id, done, trash) {
                 </li>
                 `;
   const position = "beforeend";
-  // What is the difference between insertAdjacentElement
   // insertAdjacentHTML is a very cool DOM method we can call on any DOM element to add new content to a page.It is a nice and flexible way to insert new content. The method is called on an element and accepts 2 parameters: the position, and a string containing HTML.
   list.insertAdjacentHTML(position, item);
 }
